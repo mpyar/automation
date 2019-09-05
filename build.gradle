@@ -17,8 +17,11 @@ sonarqube{
     properties{
         property "sonar.projectName", "Automation"
         property "sonar.projectKey", "org.sonarqube:JacocoCodeCoverage"
-        property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
+
+        properties "sonar.coverage.jacoco.xmlReportPaths", "${project.buildDir}/reports/jacoco.xml"
+        //property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
         //property "sonar.coverage.jacoco.xmlReportPaths", "${project.buildDir}/test-results/test/TEST-com.gsk.TestJunit.xml"
+
     }
 }
 
