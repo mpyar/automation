@@ -1,0 +1,27 @@
+plugins {
+    id "java"
+    id "org.sonarqube" version "2.7.1"
+    id "jacoco"
+}
+
+group 'test123'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+sonarqube{
+    properties{
+        property "sonar.projectName", "Automation"
+        property "sonar.projectKey", "org.sonarqube:JacocoCodeCoverage"
+        property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
+        //property "sonar.coverage.jacoco.xmlReportPaths", "${project.buildDir}/test-results/test/TEST-com.gsk.TestJunit.xml"
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
